@@ -1,0 +1,73 @@
+* {
+  font-size: 0.77777778vw;
+}
+body {
+  background-color: #BCBEC2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body .app #login {
+  position: relative;
+  height: 27.77777778vw;
+  width: 25vw;
+  background-color: pink;
+  margin-top: -5.55555556vw;
+  border-radius: 1.66666667vw;
+}
+body .app #login .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 2.77777778vw;
+}
+body .app #login .logo svg {
+  width: 2.77777778vw;
+  height: 2.77777778vw;
+}
+body .app #login .sign-input {
+  display: inline-flex;
+  position: absolute;
+  flex-direction: column;
+  border: 0.05555556vw solid #222;
+  top: 8.33333333vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body .app #login .sign-input input {
+  height: 2.77777778vw;
+  width: 16.66666667vw;
+}
+body .app #login .sign-input input:first-child {
+  border-bottom: 0.05555556vw solid #222;
+}
+body .app #login .sign-button {
+  position: absolute;
+  bottom: 8.33333333vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body .app #login .sign-button button {
+  cursor: pointer;
+  height: 2.77777778vw;
+  width: 16.66666667vw;
+}
+body .app #login .sign-for-google {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 2.22222222vw;
+  width: 16.66666667vw;
+  border: 0.05555556vw solid #222;
+  bottom: 3.88888889vw;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 10px;
+}
+body .app #login .sign-for-google svg {
+  width: 1.11111111vw;
+  height: 1.11111111vw;
+}

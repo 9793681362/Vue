@@ -1,0 +1,93 @@
+* {
+    font-size: (14 / @baseSize);
+}
+
+@baseSize: 18vw;
+
+body {
+    background-color: #BCBEC2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; //视口高度
+
+    .app {
+
+        #login {
+            position: relative;
+            height: (500 / @baseSize);
+            width: (450 / @baseSize);
+            background-color: pink;
+            margin-top: (-100 / @baseSize); // 让login元素像上去一些
+            border-radius: (30 / @baseSize);
+
+            .logo {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: (50 / @baseSize);
+
+                svg {
+                    width: (50 / @baseSize);
+                    height: (50 / @baseSize);
+                }
+            }
+
+            .sign-input {
+                display: inline-flex;
+                position: absolute;
+                flex-direction: column;
+                border: (1 / @baseSize) solid #222;
+                top: (150 / @baseSize);
+                left: 50%;
+                transform: translateX(-50%);
+
+                input {
+                    height: (50 / @baseSize);
+                    width: (300 / @baseSize);
+
+                }
+
+
+
+                input:first-child {
+                    border-bottom: (1 / @baseSize) solid #222;
+                }
+            }
+
+            .sign-button {
+                position: absolute;
+                bottom: (150 / @baseSize);
+                left: 50%;
+                transform: translateX(-50%);
+
+                button {
+                    cursor: pointer;
+                    height: (50 / @baseSize);
+                    width: (300 / @baseSize);
+                }
+            }
+
+            .sign-for-google {
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                height: (40 / @baseSize);
+                width: (300 / @baseSize);
+                border: (1 / @baseSize) solid #222;
+                bottom: (70 / @baseSize);
+                left: 50%;
+                transform: translateX(-50%);
+                gap: 10px;
+
+                svg {
+                    width: (20 / @baseSize);
+                    height: (20 / @baseSize);
+                }
+            }
+
+        }
+    }
+}
