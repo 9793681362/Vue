@@ -35,24 +35,33 @@ body {
 
             .sign-input {
                 display: inline-flex;
+                position: relative;
                 position: absolute;
                 flex-direction: column;
                 border: (1 / @baseSize) solid #222;
                 top: (150 / @baseSize);
                 left: 50%;
                 transform: translateX(-50%);
+                border-radius: 5px;
+                overflow: hidden;
+
+                i {
+                    position: absolute;
+                }
 
                 input {
                     height: (50 / @baseSize);
                     width: (300 / @baseSize);
-
                 }
 
 
 
-                input:first-child {
+
+                div:first-child input {
                     border-bottom: (1 / @baseSize) solid #222;
                 }
+
+
             }
 
             .sign-button {
@@ -61,10 +70,12 @@ body {
                 left: 50%;
                 transform: translateX(-50%);
 
+
                 button {
                     cursor: pointer;
                     height: (50 / @baseSize);
                     width: (300 / @baseSize);
+                    border-radius: 5px;
                 }
             }
 
@@ -77,6 +88,7 @@ body {
                 height: (40 / @baseSize);
                 width: (300 / @baseSize);
                 border: (1 / @baseSize) solid #222;
+                border-radius: 5px;
                 bottom: (70 / @baseSize);
                 left: 50%;
                 transform: translateX(-50%);
@@ -85,6 +97,10 @@ body {
                 svg {
                     width: (20 / @baseSize);
                     height: (20 / @baseSize);
+                }
+
+                p {
+                    margin: 0;
                 }
             }
 

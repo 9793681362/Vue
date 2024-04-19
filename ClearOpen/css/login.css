@@ -28,18 +28,24 @@ body .app #login .logo svg {
 }
 body .app #login .sign-input {
   display: inline-flex;
+  position: relative;
   position: absolute;
   flex-direction: column;
   border: 0.05555556vw solid #222;
   top: 8.33333333vw;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 5px;
+  overflow: hidden;
+}
+body .app #login .sign-input i {
+  position: absolute;
 }
 body .app #login .sign-input input {
   height: 2.77777778vw;
   width: 16.66666667vw;
 }
-body .app #login .sign-input input:first-child {
+body .app #login .sign-input div:first-child input {
   border-bottom: 0.05555556vw solid #222;
 }
 body .app #login .sign-button {
@@ -52,6 +58,7 @@ body .app #login .sign-button button {
   cursor: pointer;
   height: 2.77777778vw;
   width: 16.66666667vw;
+  border-radius: 5px;
 }
 body .app #login .sign-for-google {
   display: flex;
@@ -62,6 +69,7 @@ body .app #login .sign-for-google {
   height: 2.22222222vw;
   width: 16.66666667vw;
   border: 0.05555556vw solid #222;
+  border-radius: 5px;
   bottom: 3.88888889vw;
   left: 50%;
   transform: translateX(-50%);
@@ -70,4 +78,7 @@ body .app #login .sign-for-google {
 body .app #login .sign-for-google svg {
   width: 1.11111111vw;
   height: 1.11111111vw;
+}
+body .app #login .sign-for-google p {
+  margin: 0;
 }
