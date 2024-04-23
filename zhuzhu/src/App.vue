@@ -9,7 +9,8 @@
 <script>
 
 import PageHeader from './components/PageHeader.vue';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';   // 使用bootstarp的字体图标必须导入这个
+
 
 
 export default {
@@ -28,9 +29,13 @@ export default {
   *{
     margin: 0;
     padding: 0;
+    outline: none;
   }
   body{
     background-color: #F8F7F4;
+    font-weight: 400;
+    // font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Roboto;
   }
   .app{
     padding: 0 40px;
@@ -45,4 +50,8 @@ export default {
   input{
     border: none;
   }
+  input:focus{
+    outline:none;
+  }
+
 </style>
