@@ -1,21 +1,26 @@
 <template>
   <div class='app'>
-    <!-- PageHeader 头部 -->
+    <!-- PageHeader首页头部 -->
     <PageHeader></PageHeader>
-    
+    <!-- 英语句子 -->
+    <EngSentence></EngSentence>
   </div>
 </template>
 
 <script>
 
 import PageHeader from './components/PageHeader.vue';
+import EngSentence from './components/EngSentence.vue';
+
+
 import 'bootstrap-icons/font/bootstrap-icons.css';   // 使用bootstarp的字体图标必须导入这个
 
 
 
 export default {
   components: {
-    PageHeader, 
+    PageHeader,
+    EngSentence
   },
   data() {
     return {}

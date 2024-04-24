@@ -2,10 +2,10 @@
   <div class='header'>
     <div class="nav-head">
       <div class="nav-left">
-        <ul class="lef-list">
-        <li  class='English' @mouseover="Mousein" @mouseleave="Mouseout">
-          <a href="#" class="down">English</a>
-          <ul class="left-down" v-show="isShow">
+        <ul class="lef-list" >
+        <li  class='English' @mouseover="showEnglish" @mouseleave="hideEnglish">
+          <a href="#" class="down">{{navInfo[0].name}}</a>
+          <ul class="left-down" v-show="isEnglishVisible">
             <li>
                 <a href="">
                   Words
@@ -24,39 +24,24 @@
                   <span>English past exam paper</span>
                 </a>
             </li>
-
-      
           </ul>
         </li>
-        <li class="Javascript"><a href="#">Javascript</a></li>
-        <li class="Vue ">
-            <a href="#" class="down">Vue</a>
-             <ul class="left-down">
+        <li class="Javascript"><a href="#">{{navInfo[1].name}}</a></li>
+        <li class="Vue" @mouseover="showVue" @mouseleave="hideVue">
+            <a href="#" class="down">{{navInfo[2].name}}</a>
+             <ul class="left-down" v-show="isVueVisible">
             <li>
                 <a href="">
                   Words
                   <span>Quick find your words</span>
                 </a>
             </li>
-                        <li>
-                <a href="">
-                  Sentence
-                  <span>English sentence game</span>
-                </a>
-            </li>
-                                    <li>
-                <a href="">
-                  PETS 3
-                  <span>English past exam paper</span>
-                </a>
-            </li>
 
-      
           </ul>
         </li>
-        <li class="Python"><a href="#">Javascript</a></li>
-        <li class="Django"><a href="#">Django</a></li>
-        <li class="Duolingo"><a href="#">Duolingo</a></li>
+        <li class="Python"><a href="#">{{navInfo[3].name}}</a></li>
+        <li class="Django"><a href="#">{{navInfo[4].name}}</a></li>
+        <li class="Duolingo"><a href="#">{{navInfo[5].name}}</a></li>
         </ul>
       </div>
       <div class="nav-main">
@@ -80,20 +65,41 @@
 
 
 <script>
+
+
+
+
 export default {
   data() {
     return {
-      isShow:true
+      navInfo: [
+        { id:1,name:'English' },
+        {id:2,name:'Javascript'},
+        {id:3,name:'Vue'},
+        {id:4,name:'Python'},
+        {id:5,name:'Django'},
+        {id:6,name:'Duolingo'},
+      ],
+
+
+      isEnglishVisible: false,
+      isVueVisible:false
     }
   },
   computed: {},
   methods: {
-    Mousein() { 
-      this.isShow = true
+    showEnglish() {
+      this.isEnglishVisible = true
     },
-    Mouseout() {
-      // this.isShow = false
-     }
+    hideEnglish() {
+      this.isEnglishVisible = false
+    },
+    showVue() {
+      this.isVueVisible = true
+    },
+    hideVue() {
+      this.isVueVisible = false
+    }
   }
 }
 </script>
@@ -122,7 +128,7 @@ export default {
     display: flex;
     font-weight: 500;
     li{
-      padding-right: 16px;
+      padding:0 16px;
     }
   }
 }
@@ -136,10 +142,6 @@ export default {
   font-size: 10px;
   color: #222;
 }
-
-
-
-
 
 .nav-main{
   position: absolute; /* 使用绝对定位 */
@@ -197,7 +199,6 @@ export default {
   position: absolute;  //这样一来可以不把其他元素顶上去
   flex-direction: column;
   background-color: #fff;
-  // margin-top: 18px;
   padding: 32px;
   gap: 20px ;
 
@@ -208,19 +209,19 @@ export default {
     font-weight: 500;
     font-size: 14px;
     color: #0d0c22;
+    background-color: #fff;
   }
   }
 }
 
   .left-down::before {
   content: ''; // 确保伪元素被创建
+  position: absolute;
   height: 18px;
   width: 100%;
-  position: relative; // 相对于父元素定位
   top: 0; // 根据需求调整
   left: 0;
-  background-color: pink; // 作为示例
-  background-color: transparent; // 透明，以模拟 margin
+  background-color: #F8F7F4 !important; // 透明，以模拟 margin
 }
 
 </style>
