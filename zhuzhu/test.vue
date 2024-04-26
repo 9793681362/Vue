@@ -1,3 +1,6 @@
+
+
+
 <template>
   <div class='english-sentence'>
     <div class="sentence" >
@@ -7,7 +10,7 @@
             <p class="acticle-chinese" v-for="item in disPlayData" :key="item.id"> {{item.text}}</p>
       </div>
       </div>
-      <textarea action="" class="inp-sentence" v-model="inputAnswer" @input="checkAnswer">
+      <textarea action="" class="inp-sentence" v-model="inputAnswer"  @input="checkAnswer">
       </textarea>
     </div>
     <div class="solution">
@@ -34,26 +37,35 @@ export default {
         {id:6,text:'当他吃饭时，我提出向他借20英镑。',answer:'While he was eating, I asked him to lend me twenty pounds.'},
         {id:7,text:'令我惊奇的是，他立刻把钱给了我。',answer:'To my surprise, he gave me the money immediately.'},
         {id:8,text:'我还从未向你借过钱，”托尼说道，“所以现在你可以替我付饭钱了！',answer:'I have never borrowed any money from you,’Tony said‘, ‘so now you can pay for my dinner!'}
-      ],
-      current: 0,
-      inputAnswer:''
+    ],
+      inputAnswer: '',
+      currentId:0 // 当前显示的数据索引
     }
   },
   computed: {
     disPlayData() {
-      return this.newConceptEnglish.slice(0,this.current + 1)
+      // 根据currentId 控制显示数据
+      return this.newConceptEnglish.slice(0,this.currentId + 1)
     }
-
   },
   methods: {
-    checkAnswer() {
-      if (this.newConceptEnglish[this.current].answer.replace(/\s+/g, '').replace(/[^\w]/g, '').toLowerCase() === this.inputAnswer.replace(/\s+/g, '').replace(/[^\w]/g, '').toLowerCase()) {
-        if (this.current < this.newConceptEnglish.length) {
-          this.current++;
-          this.inputAnswer = ''
+    checkAnswer() { 
+      const answer = this.inputAnswer.trim(); // 去掉首位空格
+      const currentData = this.newConceptEnglish[this.currentId]
+
+      // 检查输入答案是否匹配当前数据的答案
+
+      console.log(answer);
+      console.log(currentData.answer);
+      if (answer === currentData.answer) { 
+        // 如果匹配，则增加 `currentId`，显示下一条数据
+        if (this.currentId < this.newConceptEnglish.length - 1) { 
+          this.currentId++;
+          this.inputAnswer = ''; // 清空输入框
         }
       }
     }
+    
 
   }
   }
@@ -118,7 +130,7 @@ export default {
   transform:translateX(-50%);
   height: 300px;
   width: 1000px;
-  // background-color: #F8F7F4;
+  background-color: #F8F7F4;
   border-radius: 15px;
   padding: 10px 20px;
   font-size: 40px;
@@ -138,5 +150,6 @@ export default {
   }
 }
 </style>
+
 
 

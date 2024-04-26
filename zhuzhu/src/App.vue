@@ -2,15 +2,18 @@
   <div class='app'>
     <!-- PageHeader首页头部 -->
     <PageHeader></PageHeader>
+    <router-view></router-view>
     <!-- 英语句子 -->
-    <EngSentence></EngSentence>
+    <!-- <EngSentence></EngSentence> -->
+    <HomeContainer></HomeContainer>
+
   </div>
 </template>
 
 <script>
 
 import PageHeader from './components/PageHeader.vue';
-import EngSentence from './components/EngSentence.vue';
+import HomeContainer from './components/HomeContainer.vue';
 
 
 import 'bootstrap-icons/font/bootstrap-icons.css';   // 使用bootstarp的字体图标必须导入这个
@@ -20,7 +23,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';   // 使用bootstarp的字体
 export default {
   components: {
     PageHeader,
-    EngSentence
+    HomeContainer
   },
   data() {
     return {}
@@ -39,7 +42,6 @@ export default {
   body{
     background-color: #F8F7F4;
     font-weight: 400;
-    // font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-family: Roboto;
   }
   .app{
