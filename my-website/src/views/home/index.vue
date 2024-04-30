@@ -1,7 +1,7 @@
 <template>
-  <div class='header'>
+  <div class='home-container'>
     <Header></Header>
-    <NavBar></NavBar>
+    <NavBar v-show="false"></NavBar>
   </div>
 </template>
 
@@ -13,7 +13,6 @@ export default {
   components: {
     Header,
     NavBar
-    
   },
   data() {
     return {}
@@ -24,5 +23,8 @@ export default {
 </script>
 
 <style lang='less' scoped>
+.home-container{
+  position: relative;
+}
 
 </style>

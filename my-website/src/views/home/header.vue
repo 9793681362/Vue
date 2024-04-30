@@ -1,7 +1,7 @@
 <template>
   <div class='header'>
     <div class="header-left">
-      <van-icon @click="navButton" name="wap-nav" class="nav-button"/>
+      <van-icon @click="toggleNavBar" name="wap-nav" class="nav-button"/>
       <div class="logo"></div>
       <div class="dashbor"></div>
     </div>
@@ -9,19 +9,24 @@
       <input type="text" class="search">
       <div class="user"></div> 
     </div>
+    <narBar v-if="isNavBarVisible" />
   </div>
 </template>
 
 <script>
+import narBar from './nav.vue'
 export default {
+
     name:'headerNav',
   data() {
+    narBar  
     return {}
   },
   computed: {},
   methods: {
-    navButton() { 
-      
+    toggleNavBar() { 
+      // 切换 navBar 的显示/隐藏状态
+      this.isNavBarVisible = !this.isNavBarVisible
     }
   }
 }

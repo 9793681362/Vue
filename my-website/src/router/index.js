@@ -7,10 +7,13 @@ import English from '@/views/english'
 Vue.use(VueRouter)
 
 const routes = [
-
+  {
+    path: '/',
+    component: Home
+  },
   {
     path: '/home',
-    component: Home
+    component: Home,
   },
   {
     path: '/english',
